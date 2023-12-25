@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    database: youtubedb
+    schema: public
+
+    tables:
+      - name: channelsnippet
+      - name: channelstat

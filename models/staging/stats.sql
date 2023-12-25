@@ -8,4 +8,6 @@ SELECT
     cast(subscribercounts as numeric) as subscribers,
     CAST(videocounts as numeric) as videos
 
-FROM channelstat
+FROM {{source ('staging','channelstat')}}
+
+limit 10
