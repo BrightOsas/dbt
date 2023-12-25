@@ -8,6 +8,10 @@ with snippetdata as (
 
 statsata as (
     select * from {{ref('stats')}}
+),
+
+dimcountry as (
+    select * from {{ ref ('dimcountry')}}
 )
 
 select
@@ -17,7 +21,10 @@ select
     st.views,
     st.subscribers,
     st.videos,
-    sp.country
+    dm.country
 
 from snippetdata sp
 full join statsata st on sp.id = st.id
+
+left join dimcountry dm
+on sp.country = dm.id

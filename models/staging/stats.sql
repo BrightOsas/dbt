@@ -9,5 +9,3 @@ SELECT
     CAST(videocounts as numeric) as videos
 
 FROM {{source ('staging','channelstat')}}
-
-limit 10
