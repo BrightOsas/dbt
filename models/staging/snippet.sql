@@ -4,9 +4,10 @@
 
 select
     id,
-    REPLACE(title, " - Topic","") AS title,
+    REPLACE(title, ' - Topic','') AS title,
     DATE(publishedate) AS publishedate,
-    TIME(publishedate) AS publisetime,
-    COALESCE(country, "NotSpecified") AS country
+    COALESCE(country, 'NotSpecified') AS country
 
-from channelsnippet
+from {{source ('staging','channelsnippet')}}
+
+limit 10
