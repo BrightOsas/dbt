@@ -26,5 +26,5 @@ select
 from snippetdata sp
 full join statsata st on sp.id = st.id
 
-right join dimcountry dm
+left join dimcountry dm
 on sp.country = dm.id
