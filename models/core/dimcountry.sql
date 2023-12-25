@@ -4,5 +4,5 @@
 
 SELECT
     id,
-    'value' as country
+    value as country
 from {{ ref('country')}}
