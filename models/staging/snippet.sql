@@ -3,9 +3,9 @@
 )}}
 
 select
+    publishedate,
     id,
     REPLACE(title, ' - Topic','') AS title,
-    publishedate,
-    COALESCE(country, 'NaN') AS country
+    COALESCE(NULLIF(country, ''), 'aa') AS country
 
 from {{source ('staging','channelsnippet')}}
